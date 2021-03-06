@@ -1,7 +1,6 @@
 package assignment02;
 
 public abstract class DepartmentManagement {
-
 	//map department name to employee head
 	private Map<String, Collection<Employee>> departmentHeads = new TreeMap<>();
 
@@ -24,22 +23,32 @@ public abstract class DepartmentManagement {
 	
 	// add head to department
 	public void addHead(String title, Employee head) {
-		if(!listing.containsKey(title))
-			listing.put(title, new TreeSet<>());
+		if(!departmentHeads.containsKey(title))
+			throw new IllegalArgumentException("This department title does not exist");
+		departmentHeads.get(title).add(head);
 	}
 	
-	public void addEmployeeToRole(String jobTitle, Employee emp) {
-		if(!listing.containsKey(jobTitle))
-			throw new IllegalArgumentException("This Job Title does not exist");
-		listing.get(jobTitle).add(emp);
+	public void addEmployeeToDepartment(String title, Employee emp) {
+		if(!departmentHeads.containsKey(title))
+			throw new IllegalArgumentException("This department title does not exist");
+		departmentEmployees.get(title).add(emp);
 	}
 
-	public void addEmployeeToRoleUsingId(String jobTitle, int empId) {
-		if(!listing.containsKey(jobTitle))
-			throw new IllegalArgumentException("This Job Title does not exist");
+	public void addEmployeeToDepartmentUsingId(String title, int empId) {
+		if(!departmentHeads.containsKey(title))
+			throw new IllegalArgumentException("This department title does not exist");
 		EmployeeDataBase db = EmployeeDataBase.getEmployeeDataBase(); 
 		if(db.isEmployeeId(empId))
-			listing.get(jobTitle).add(db.getFromId(empId));
+			departmentEmployees.get(title).add(db.getFromId(empId));
+
 	}
+
+	public void addDivisionToDepartment(String dep, String div) {
+		if(!departmentHeads.containsKey(title))
+			throw new IllegalArgumentException("This department title does not exist");
+		departmentDivisions.get(dep).add(div);
+	}
+
+
 	
 }
