@@ -34,5 +34,7 @@ public abstract class UpperManagement { // this is an abstract product
 		if(db.isEmployeeId(empId))
 			listing.get(jobTitle).add(db.getFromId(empId));
 	}
-	
+	public Map<String, Collection<Employee>> getListing () {
+  		return listing;
+ 	}
 }

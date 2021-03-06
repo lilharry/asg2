@@ -2,7 +2,7 @@ package assignment02;
 
 public abstract class DepartmentManagement {
 	//map department name to employee head
-	private Map<String, Collection<Employee>> departmentHeads = new TreeMap<>();
+	private Map<String, Collection<Person>> departmentHeads = new TreeMap<>();
 
 	//map department name to employees in department
 	private Map<String, Collection<Employee>> departmentEmployees = new TreeMap<>();
@@ -22,7 +22,7 @@ public abstract class DepartmentManagement {
 	}
 	
 	// add head to department
-	public void addHead(String title, Employee head) {
+	public void addHead(String title, Person head) {
 		if(!departmentHeads.containsKey(title))
 			throw new IllegalArgumentException("This department title does not exist");
 		departmentHeads.get(title).add(head);
