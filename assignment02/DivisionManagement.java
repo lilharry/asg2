@@ -25,7 +25,7 @@ public abstract class DivisionManagement{
 	
 	// add new employee to division
 	public void addEmployeeToDivision(String title, Employee emp) {
-		if(!divisionleads.containsKey(Title))
+		if(!divisionLeads.containsKey(Title))
 			throw new IllegalArgumentException("This division name does not exist");
 		divisionEmployees.get(title).add(emp);
 	}
@@ -39,4 +39,11 @@ public abstract class DivisionManagement{
 			divisionEmployees.get(title).add(db.getFromId(empId));
 	}
 	
+	public Map<String, Collection<Employee>> getLeads () {
+  		return divisionLeads;
+ 	}
+
+ 	public Map<String, Collection<Employee>> getDivisionEmployees () {
+  		return divisionEmployees;
+ 	}
 }
