@@ -15,6 +15,15 @@ public class AmazonDepartmentManagement extends DepartmentManagement {
 		addHead("Digital content", new Person("Michael", "Frazzini", NamesResource.getRandomID(), NamesResource.getRandomBirthDate()));
 		addHead("Amazon Web Services", new Person("Doug", "Yeum", NamesResource.getRandomID(), NamesResource.getRandomBirthDate()));
 
-		
+		addDivisionToDepartment("Retail Goods", "AmazonFresh");
+		addDivisionToDepartment("Retail Goods", "Vine.com");
+		addDivisionToDepartment("Amazon Prime", "Prime Music");
+		addDivisionToDepartment("Amazon Prime", "Prime Video");
+		addDivisionToDepartment("Consumer Electronics", "Amazon Kindle");
+		addDivisionToDepartment("Consumer Electronics", "Amazon Echo");
+		addDivisionToDepartment("Digital content", "Amazon Music");
+		addDivisionToDepartment("Digital content", "Amazon Appstore");
+		addDivisionToDepartment("Amazon Web Services", "Amazon S3");
+		addDivisionToDepartment("Amazon Web Services", "Amazon SQS");
 	}
 }
