@@ -19,26 +19,26 @@ public class EmployeeDataBase {
 	public boolean isEmployee(Person p) {
 		for (Employee e : employees){
 			if (!p.compareTo(e.getPerson())){
-				return True
+				return true;
 			}
 		}
-		return False
+		return False;
 	}
 	public boolean isEmployeeId(int id) {
 		for (Employee e : employees){
 			if (e.getEmployeeId() == id){
-				return True
+				return true;
 			}
 		}
-		return False
+		return False;
 	}
 	public Employee getFromId(int id) {
 		for (Employee e : employees){
 			if (e.getEmployeeId() == id){
-				return e
+				return e;
 			}
 		}
-		return null
+		return null;
 	}
 
 	static { // populate database
