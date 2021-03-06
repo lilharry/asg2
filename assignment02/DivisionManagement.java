@@ -1,8 +1,8 @@
 package assignment02;
 
-public abstract class DivisionManagement{
+public abstract class DivisionManagement{	
 	// map division name to division leads
-	private Map<String, Collection<Employee>> divisionLeads = new TreeMap<>();
+	private Map<String, Collection<Person>> divisionLeads = new TreeMap<>();
 
 	// map divsion name to division employees
 	private Map<String, Collection<Employee>> divisionEmployees = new TreeMap<>();
@@ -17,10 +17,10 @@ public abstract class DivisionManagement{
 	}
 	
 	// add new lead to division
-	public void addLeads(String title, Employee emp) {
+	public void addLeads(String title, Person p) {
 		if(!divisionLeads.containsKey(title))
 			throw new IllegalArgumentException("This division name does not exist");
-		divisionLeads.get(title).add(emp);:
+		divisionLeads.get(title).add(p);
 	}
 	
 	// add new employee to division
