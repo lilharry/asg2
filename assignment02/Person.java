@@ -26,9 +26,6 @@ public class Person implements Comparable<Person>{
 	public LocalDate getDateOfBirth() {return dateOfBirth;}
 	public List<String> getCredentials() {return credentials;}
 
-	public String toString() {
-		return name() + ", id: " + ssn; 
-	}
 
 	public boolean add(String e) {
 		return credentials.add(e);

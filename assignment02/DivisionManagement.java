@@ -1,5 +1,11 @@
 package assignment02;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 public abstract class DivisionManagement{	
 	// map division name to division leads
 	private Map<String, Collection<Person>> divisionLeads = new TreeMap<>();
@@ -25,7 +31,7 @@ public abstract class DivisionManagement{
 	
 	// add new employee to division
 	public void addEmployeeToDivision(String title, Employee emp) {
-		if(!divisionLeads.containsKey(Title))
+		if(!divisionLeads.containsKey(title))
 			throw new IllegalArgumentException("This division name does not exist");
 		divisionEmployees.get(title).add(emp);
 	}
@@ -39,7 +45,7 @@ public abstract class DivisionManagement{
 			divisionEmployees.get(title).add(db.getFromId(empId));
 	}
 	
-	public Map<String, Collection<Employee>> getLeads () {
+	public Map<String, Collection<Person>> getLeads () {
   		return divisionLeads;
  	}
 

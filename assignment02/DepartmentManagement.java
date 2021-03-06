@@ -1,5 +1,11 @@
 package assignment02;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 public abstract class DepartmentManagement {
 	//map department name to employee head
 	private Map<String, Collection<Person>> departmentHeads = new TreeMap<>();
@@ -11,6 +17,18 @@ public abstract class DepartmentManagement {
 	private Map<String, Collection<String>> departmentDivisions = new TreeMap<>();
 
 	// only for DepartmentManagement :
+
+	public Map<String, Collection<Person>> getDepartmentHeads(){
+		return departmentHeads;
+	}
+
+	public Map<String, Collection<Employee>> getDepartmentEmployees(){
+		return departmentEmployees;
+	}
+
+	public Map<String, Collection<String>> getDepartmentDivisions(){
+		return departmentDivisions;
+	}
 
 	public void addDepartment(String title) {
 		if(!departmentHeads.containsKey(title)){
@@ -44,7 +62,7 @@ public abstract class DepartmentManagement {
 	}
 
 	public void addDivisionToDepartment(String dep, String div) {
-		if(!departmentHeads.containsKey(title))
+		if(!departmentHeads.containsKey(dep))
 			throw new IllegalArgumentException("This department title does not exist");
 		departmentDivisions.get(dep).add(div);
 	}
